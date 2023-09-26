@@ -24,6 +24,7 @@ ScrollTrigger.refresh();
 var cursor = document.querySelector(".cursor")
 var main = document.querySelector(".main")
 var video1 = document.querySelector(".video1")
+var text = document.querySelector("h1")
 var cursorh5 = document.querySelector(".cursor h5")
 main.addEventListener("mousemove", function (dets) { 
     cursor.style.left = dets.x+"px"
@@ -38,6 +39,18 @@ video1.addEventListener("mouseenter", function () {
 video1.addEventListener("mouseleave", function () { 
     cursor.style.width = 15+"px"
     cursorh5.style.visibility = "hidden"
+})
+
+text.addEventListener("mouseenter", function () { 
+    cursor.style.height = 30 + "px"
+    cursor.style.width = 30 + "px"
+    cursor.style.borderradius = 30 + "px"
+})
+
+text.addEventListener("mouseleave", function () { 
+    cursor.style.height = 15 + "px"
+    cursor.style.width = 15 + "px"
+    cursor.style.borderradius = 7.5 + "px"
 })
 
 

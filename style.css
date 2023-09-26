@@ -262,11 +262,16 @@ body {
 .page4{
     min-height: 120vh;
     width: 100%;
-    padding-top: 5vh;
+    margin-top: -2vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.page4 h5{
+    font-weight: 100;
+    padding: 4vh 0;
 }
 
 .pre {
@@ -281,8 +286,9 @@ body {
     opacity: 0;
     transition: all ease 1s;
     mix-blend-mode: difference;
-    transform: translateY(10%) rotate(2deg);
+    transform: translateY(10%) rotate(3deg);
     z-index: 10;
+    visibility: hidden;
 }
 
 .pre img:nth-child(1){
@@ -296,9 +302,10 @@ body {
     right: 100%;
 }
 
-.pre h1{
+.text-div h1{
     font-size: 7.3vw;
     font-weight: 300;
+    z-index: 10;
     transition: all ease 0.5s;
 }
 
@@ -314,11 +321,92 @@ body {
 }
 
 .pre:hover img{
+    visibility: visible;
     opacity: 1;
     transform: translateY(0%) rotate(0deg);
 }
 
+#joker{
+    scale: 0.65;
+    left: 90%;
+    top: -500%;
+}
+
+#cr{
+    scale: 1;
+    left: -70%;
+    top: -110%;
+}
+
+#sleepinganya{
+    scale: 0.75;
+    top: -220%;
+    left: 80%;
+}
+
+#anya{
+    scale: 0.9;
+    left: -140%;
+    top: -300%;
+}
+
 .page5{
-    height: 100vh;
+    height: 150vh;
     width: 100%;
+}
+
+.page5 h1{
+    margin: 15vh 5vw 2vh;
+    font-size: 5vw;
+    font-weight: 300;
+}
+
+.page5 span{
+    color: #edbfff;
+}
+
+.box h3,
+.box h4,
+.box h5{
+    font-size: 1.3vw;
+    font-weight: 100;
+    text-transform: capitalize;
+    line-height: 10vh;
+    filter: brightness(40%);
+}
+
+.box h3{
+    width: 50%;
+    text-align: start;
+}
+
+.box h4{
+    width: 10%;
+    text-align: end;
+}
+
+.box h5{
+    width: 40%;
+    text-align: end;
+}
+
+.box:hover h3,
+.box:hover h4{
+    filter: brightness(100%);
+}
+
+.box h4{
+    font-size: 1.1vw;
+}
+
+.box{
+    display: flex;
+    margin-left: 11vh;
+    width: 90%;
+    height: 10vh;
+    border-top: 0.1vh solid white ;
+}
+
+.page5 :nth-child(7){
+    border-bottom: 0.1vh solid;
 }
