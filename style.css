@@ -15,15 +15,18 @@ body {
 .cursor{
     height: 15px;
     width: 15px;
-    position: fixed;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #edbfff;
-    z-index: 10;
+    z-index: 1;
     border-radius: 7.5px;
     mix-blend-mode: difference;
-    /* transition: all linear 50ms; */
+    background-position: center;
+    background-size:cover;
+    pointer-events: none;
+    transition: all ease-out 0.1s;
 }
 
 .cursor h5{
@@ -31,8 +34,35 @@ body {
     font-size: x-small;
 }
 
+.home{
+    position: absolute;
+    z-index: 11;
+    height: 100vh;
+    width: 100%;
+    background-color: #edbfffce;
+    display: none;
+    white-space: nowrap;
+}
+
+.home h1{
+    height: 100%;
+    margin-top: 20%;
+    color: #000000;
+    font-size: 7.6rem;
+    font-weight: 300;
+    animation: marquee 7s linear infinite;
+}
+
+@keyframes marquee{
+    100%{
+        transform: translate(-100%,0);
+    }
+}
+
 .main {
     background-color: #000000;
+    padding-top: 9vw;
+    /* transition: all ease-in .3s; */
 }
 
 .page1 {
@@ -43,11 +73,13 @@ body {
 #nav {
     height: 50px;
     width: 100%;
-    /* background-color: brown; */
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    mix-blend-mode: difference;
     padding: 0 30px 0 30px;
+    z-index: 100;
 }
 
 #navpart2 {
@@ -99,6 +131,8 @@ body {
     width: 60%;
     position: relative;
     left: 50%;
+    z-index: 10;
+    filter: blur(40%);
     transform: translate(-50%, 0)
 }
 
@@ -351,7 +385,7 @@ body {
 }
 
 .page5{
-    height: 150vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -391,7 +425,8 @@ body {
 }
 
 .box:hover h3,
-.box:hover h4{
+.box:hover h4,
+.box:hover h5{
     filter: brightness(100%);
 }
 
@@ -409,4 +444,9 @@ body {
 
 .page5 :nth-child(7){
     border-bottom: 0.1vh solid;
+}
+
+footer{
+    height: 100vh;
+    background-color: #edbfff;
 }

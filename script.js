@@ -24,35 +24,45 @@ ScrollTrigger.refresh();
 var cursor = document.querySelector(".cursor")
 var main = document.querySelector(".main")
 var video1 = document.querySelector(".video1")
-var text = document.querySelector("h1")
 var cursorh5 = document.querySelector(".cursor h5")
-main.addEventListener("mousemove", function (dets) { 
-    cursor.style.left = dets.x+"px"
-    cursor.style.top = dets.y+"px"
+
+document.addEventListener("mousemove", function (dets) { 
+    cursor.style.left = dets.x+ -7.5 +"px"
+    cursor.style.top = dets.y+ -7.5 +"px"
  })
 
-video1.addEventListener("mouseenter", function () { 
+// document.onmousemove = function(e){
+//     cursor.style.left = e.pageX+ -7.5 +"px"
+//     cursor.style.top = e.pageY+ -7.5 +"px"
+// }
+
+video1.addEventListener("mouseenter", function (dets) { 
     cursor.style.width = 60+"px"
+    cursor.style.transform = "translateX(-20px)"
     cursorh5.style.visibility = "visible"
 })
 
 video1.addEventListener("mouseleave", function () { 
     cursor.style.width = 15+"px"
+    cursor.style.transform = "translateX(0px)"
     cursorh5.style.visibility = "hidden"
 })
 
-text.addEventListener("mouseenter", function () { 
-    cursor.style.height = 30 + "px"
-    cursor.style.width = 30 + "px"
-    cursor.style.borderradius = 30 + "px"
-})
-
-text.addEventListener("mouseleave", function () { 
-    cursor.style.height = 15 + "px"
-    cursor.style.width = 15 + "px"
-    cursor.style.borderradius = 7.5 + "px"
-})
-
+var text = document.querySelectorAll(".page4 h1")
+text.forEach(function(elem) {
+        elem.addEventListener("mouseenter", function () { 
+        cursor.style.height = 30 + "px"
+        cursor.style.width = 30 + "px"
+        cursor.style.borderRadius = 15 + "px"
+    })
+    
+        elem.addEventListener("mouseleave", function () { 
+        cursor.style.height = 15 + "px"
+        cursor.style.width = 15 + "px"
+        cursor.style.borderRadius = 7.5 + "px"
+    })
+});
+    
 
 gsap.from(".page1 h1,.page1 h2", {
     y: 10,
@@ -100,7 +110,7 @@ var tl3 = gsap.timeline({
         trigger: ".page1 h1",
         scroller: ".main",
         // markers:true,
-        start: "top -200%",
+        start: "top -210%",
         end: "top -250%",
         scrub: 3
     }
@@ -117,8 +127,8 @@ var tl4 = gsap.timeline({
         trigger: ".page1 h1",
         scroller: ".main",
         // markers:true,
-        start: "top -350%",
-        end: "top -400%",
+        start: "top -360%",
+        end: "top -420%",
         scrub: 3
     }
 })
@@ -163,4 +173,40 @@ var tl6 = gsap.timeline({
 
 tl6.to(".division2",{
     backgroundColor: "#ffffff"
+})
+
+var boxes = document.querySelectorAll(".box")
+boxes.forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        var att = elem.getAttribute("data-image")
+        cursor.style.width = "400px"
+        cursor.style.height = "400px"
+        cursor.style.transform = "translate(-235px,-185px)"
+        // cursor.style.transform = "translateY(-185px)"
+        cursor.style.borderRadius = "0"
+        cursor.style.mixBlendMode = "normal"
+        cursor.style.backgroundImage = `url(${att})`
+    })
+    elem.addEventListener("mouseleave",function(){
+        elem.style.backgroundColor = "transparent"
+        cursor.style.width = "15px"
+        cursor.style.height = "15px"
+        cursor.style.transform = "translateX(0px)"
+        cursor.style.borderRadius = "7.5px"
+        cursor.style.backgroundImage = `none`
+        cursor.style.mixBlendMode = "difference"
+    })
+})
+
+var h4 = document.querySelectorAll("#nav h4")
+var home = document.querySelector(".home")
+h4.forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        home.style.display = "block"
+        main.style.filter = "blur(1.5rem)"
+    })
+    elem.addEventListener("mouseleave",function(){
+        home.style.display = "none"
+        main.style.filter = "blur(0)"
+    })
 })
