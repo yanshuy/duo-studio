@@ -111,7 +111,7 @@ var tl3 = gsap.timeline({
         scroller: ".main",
         // markers:true,
         start: "top -210%",
-        end: "top -250%",
+        end: "top -270%",
         scrub: 3
     }
 })
@@ -173,6 +173,46 @@ var tl6 = gsap.timeline({
 
 tl6.to(".division2",{
     backgroundColor: "#ffffff"
+})
+
+var tl7 = gsap.timeline({
+    scrollTrigger: {
+        scroller: ".main",
+        // markers:true,
+        start: "top -520%",
+        end: "top -700%",
+        scrub: 3
+    }
+})
+
+var tl8 = gsap.timeline({
+    scrollTrigger: {
+        scroller: ".main",
+        // markers:true,
+        start: "top -520%",
+        end: "top -700%",
+        scrub: 3
+    }
+})
+
+tl7.from("footer h1", {
+    y: 0,
+    opacity: 0.1,
+})
+
+tl7.to("footer h1", {
+    y: 200,
+    opacity: 1,
+})
+
+tl8.from("footer button", {
+    y: 0,
+    opacity: 0,
+})
+
+tl8.to("footer button", {
+    y: 185,
+    opacity: 1,
 })
 
 var boxes = document.querySelectorAll(".box")
